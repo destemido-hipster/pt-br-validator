@@ -20,6 +20,7 @@ class TelefoneComCodigo implements Rule
      */
     public function passes($attribute, $value)
     {
+        if (!isset($value)) return true;
         return preg_match('/^[+]\d{1,2}\s?\(\d{2}\)\s?\d{4,5}\-\d{4}$/', $value) > 0;
     }
 
